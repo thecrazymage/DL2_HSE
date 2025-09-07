@@ -6,6 +6,8 @@
 
 The goal of this homework is to practice using PyTorch and gain experience with profiling and running multi-GPU training jobs in a near real-world setup.
 
+Original task: [link](https://github.com/puhsu/dl-hse/tree/main/2024/hw01-tensorlibs).
+
 Table of Contents:
 
 1. [MiniTorch](#1-minitorch-make-your-own-pytorch)
