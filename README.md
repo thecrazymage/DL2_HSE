@@ -18,7 +18,8 @@ the [wiki page](http://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD
 
 <big><pre>
     1.  [Essentials of GPU, Deep Learning Bottlenecks, and Benchmarking Basics](./week_01)
-    1.  [On Transformers and Bitter Lesson](./week_02)
+    2.  [On Transformers and Bitter Lesson](./week_02)
+    3.  [Modern LLMs essentials](./week_03)
 </pre></big>
 
 ## Homeworks
