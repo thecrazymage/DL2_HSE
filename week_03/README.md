@@ -4,7 +4,7 @@ Lecturer: [Alexander Shabalin](https://www.hse.ru/org/persons/208533329/)
 
 Seminarian: [Ivan Ershov](www.instagram.com/tugarin_vanya)
 
-Recording (in Russian): TBA.
+Recordings (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_03.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_03.mp4).
 
 ## Annotation
 
