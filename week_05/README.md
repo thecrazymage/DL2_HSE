@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: : [Alexander Oganov](https://www.hse.ru/org/persons/956617478/)
 
-Recordings (in Russian): TBA.
+Recordings (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_05.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_05.mp4).
 
 ## Annotation
 
