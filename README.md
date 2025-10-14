@@ -22,6 +22,7 @@ the [wiki page](http://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD
     3.  [Modern LLMs essentials](./week_03)
     4.  [Basics of Efficient LLM Training Infrastructure](./week_04)
     5.  [Segmentation and Detection](./week_05)
+    6.  [Segmentation and Detection 2](./week_06)
 </pre></big>
 
 ## Homeworks
@@ -29,6 +30,7 @@ the [wiki page](http://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD
 <big><pre>
     1.  [Homework 1](./homeworks/homework_01)
     2.  [Homework 2](./homeworks/homework_02)
+    2.  [Homework 3](./homeworks/homework_03)
 </pre></big>
 
 ## Acknowledgments
