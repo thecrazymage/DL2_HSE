@@ -32,7 +32,8 @@ the [wiki page](http://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD
 <big><pre>
     1.  [Homework 1](./homeworks/homework_01)
     2.  [Homework 2](./homeworks/homework_02)
-    2.  [Homework 3](./homeworks/homework_03)
+    3.  [Homework 3](./homeworks/homework_03)
+    4.  [Homework 4](./homeworks/homework_04)
 </pre></big>
 
 ## Acknowledgments
