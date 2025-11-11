@@ -4,7 +4,7 @@ Lecturer: [Nikita Starodubcev](https://scholar.google.com/citations?user=o6pRm_g
 
 Seminarian: [Eva Neudachina](https://www.hse.ru/org/persons/401628708/)
 
-Recordings (in Russian): [lecture](), [seminar]().
+Recordings (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_09.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_09.mp4).
 
 ## Annotation
 
