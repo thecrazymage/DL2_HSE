@@ -4,7 +4,7 @@ Lecturer: [Kirill Khrylchenko](https://www.hse.ru/org/persons/1085421573/)
 
 Seminarian: [Artem Matveev](https://www.linkedin.com/in/artem-matveev-7b2725255/)
 
-Recordings (in Russian): [lecture](), [seminar]().
+Recordings (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_11.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_11.mp4).
 
 ## Annotation
 
