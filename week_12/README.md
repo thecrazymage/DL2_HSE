@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [Fedor Velikonivtsev](https://www.hse.ru/org/persons/816100677/)
 
-Recordings (in Russian): [lecture](), [seminar]().
+Recordings (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_12.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_12.mp4).
 
 ## Annotation
 In the lecture, we will explore the basics of Graph Machine Learning (Graph-ML), the tasks are being solved in this domain, and the properties of the models and architectures being used in Graph-ML. In the seminar, we will train our Graph Neural Network using modern Graph-ML frameworks.
