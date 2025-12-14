@@ -1,0 +1,17 @@
+networkx
+pandas
+numpy<2.0
+pandas
+scikit-learn
+plotly==5.24.1
+matplotlib
+seaborn
+jupyter
+ipywidgets
+bokeh
+jupyter_bokeh
+ogb
+pyemd
+pygst
+rdkit
+imageio
