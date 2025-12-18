@@ -1,0 +1,364 @@
+#+title: Tabular Deep Learning
+#+author: Ivan Rubachev, Yandex Research
+
+* What the lecture is about
+
+*Annoucment:* Deep Learning and Tabular Data
+
+We'll talk about DL and tabular data. We'll go from [[https://scikit-learn.org/stable/modules/generated/sklearn.datasets.fetch_california_housing.html][California]] to $10М [[https://www.eu-startups.com/2025/02/prior-labs-raises-e9-million-for-foundation-models-for-spreadsheets-and-databases/][seed rounds]].
+
+- a broad outlook on the field
+- talk about the field's evolution
+- think about where it's going
+
+/Tehcnically speaking/ we'll also talk about 
+
+- DL model components specific to tabular data
+- some IMO interesting speculations about why they are different
+    (our group's most recent work)
+
+------
+
+*Later* (seminar): Hands-on tabular DL — on a MacBook.
+
+The idea:
+- We implement some of the core models from scratch (or watch me +do+ run it).
+- The hardware constraint might help us appreciate the practical limits (or lack thereof).
+
+* Before +it was+ it started becoming cool
+
+Attention to tabular data & deep learning intersection is increasing:
+
+#+ATTR_HTML: :align center :width 800px
+[[file:assets/Before_+it_was+_it_started_becoming_cool/2025-12-14_20-41-12_conference_trends_clean.png]]
+
+#+ATTR_HTML: :align center :width 800px
+[[file:assets/Before_+it_was+_it_started_becoming_cool/scholar.png]]
+
+
+
+-----
+
+But a few years ago (~2021)...
+
+I usually rant about this longer in lectures
+
+This time I do this  just to set up the "benchmarking is hard" (in /good/ papers too) message
+plus it's fun to do some history, and to show /how we live/:
+
+#+ATTR_HTML: :width 800px :align center
+[[file:assets/Before_+it_was+_it_started_becoming_cool/2025-12-14_20-57-52_Screen_Shot_2019-01-14_at_1.23.53_PM.jpg]]
+
+-----
+
+Once upon a time  (a few years ago in ~2021)...
+
+#+ATTR_HTML: :align center :width 800px
+[[file:assets/Before_+it_was+_it_started_becoming_cool/2025-12-14_21-21-17_presentation(1).png]]
+
+
+But...
+
+#+ATTR_HTML: :align center :width 600px
+[[file:assets/Before_+it_was+_it_started_becoming_cool/revisiting.png]]
+
+- Most methods fail to pass an MLP baseline
+- Adding skip-connections
+- Reusing the Transformer model (from totally unrelated domains)
+- Works best (for whatever reason)
+
+  -----
+
+*Why?*
+
+#+ATTR_HTML: :align center :width 600px
+[[file:assets/Before_+it_was+_it_started_becoming_cool/why.png]]
+
+We'll recall this paper a bit later (when talking about analysis)
+
+
+* Now onto what works
+
+*GBDTs*!
+fit() predict() is almost all you need
+[[file:assets/Now_onto_what_works/2025-12-14_21-29-46_xgboost-is-all-you-need.png]]
+
+* But this lecture is about DL
+
+Neural networks are different (as we've talked about a few moments prior)
+
+There are basic things you should have in mind
+Especially when working with tabular NNs
+
+-----
+*Preprocessing*
+
+Much more important than for GBDTs
+
+#+ATTR_HTML: :align center :width 600px
+[[file:assets/But_this_lecture_is_about_DL/bird.jpg]]
+
+
+What you should know:
+
+- Z-scoring (StandartScaler) or MinMaxScaler are often not enough
+- There are more universally good methods but it's still super dataset specific
+
+#+begin_src python
+def transform_num(
+    X: dict[Part, np.ndarray],
+    method: str = "standard",
+    seed: int = 0,
+) -> dict[Part, np.ndarray]:
+    """
+    Transform numerical features.
+
+    Methods:
+    - "standard": z-score normalization
+    - "quantile": quantile transform to normal
+    - "noisy_quantile": quantile with noise to break ties
+    """
+    if method == "standard":
+        scaler = sklearn.preprocessing.StandardScaler()
+        X_fit = X["train"]
+    elif method in ("quantile", "noisy_quantile"):
+        scaler = sklearn.preprocessing.QuantileTransformer(
+            n_quantiles=max(min(X["train"].shape[0] // 30, 1000), 10),
+            output_distribution="normal",
+            subsample=1_000_000_000,
+            random_state=seed,
+        )
+        if method == "noisy_quantile":
+            X_fit = X["train"] + np.random.RandomState(seed).normal(
+                0.0, 1e-5, X["train"].shape
+            ).astype(X["train"].dtype)
+        else:
+            X_fit = X["train"]
+    else:
+        raise ValueError(f"Unknown method: {method}")
+
+    scaler.fit(X_fit)
+    result = {k: scaler.transform(v).astype(np.float32) for k, v in X.items()}
+    result = {k: np.nan_to_num(v) for k, v in result.items()}
+    return result
+#+end_src
+
+But there is also:
+- https://github.com/dholzmueller/pytabkit for the RobustScale + Clip transform
+- look at the https://github.com/PriorLabs/TabPFN/tree/main/src/tabpfn/preprocessors for inspiration
+- you could also do quantile transform online and fast (if you have too much data): https://arxiv.org/abs/1902.04023
+- it's probably not over (we'll talk a bit about this while discussing feature-embeddings) (e.g. [[https://openreview.net/forum?id=TkerLrovDn][Stretch Transformation]])
+
+If you want faster preprocessing for medium-large datasets look at
+https://github.com/vaaven/fqt
+
+-----
+*Dealing with missing features*, or noisy features
+
+Imputation for prediction: beware of diminishing returns
+https://arxiv.org/abs/2407.19804
+
+#+ATTR_HTML: :align center :width 900px
+[[file:assets/But_this_lecture_is_about_DL/missing.png]]
+
+
+Noisy features
+https://arxiv.org/abs/2311.05877
+
+- GBDT/Forset based feature selection and then use your model
+- Proposed Deep Lasso (also kind-a works)
+- Needs testing in the real world
+
+-----
+*Early stopping*
+
+- large enough validation sets (or cross-val based stopping if you deal with smaller data)
+- think about the metric you early-stop on
+- now it seems crucial
+    - both ends: /sometimes/ it may improve your methods significantly,
+        /sometimes/ it may be important to stop conservatively
+
+#+ATTR_HTML: :align center :width 900px
+[[file:assets/But_this_lecture_is_about_DL/earlystop.png]]
+
+See also, a typical train, val and test curves on a tabular dataset:
+
+*TODO* (need to finish seminar shenanigans)
+
+-----
+*Hyperparameter Tuning*
+
+This applies to GBDTs as well.
+
+- BayesOpt is superior to random search (https://proceedings.mlr.press/v133/turner21a.html) 
+- With smaller models you /can/ parallelize your tuning (modestly, due to perf reasons)
+- You can use (and possibly will use in the future) tabular models as surrogates (see https://arxiv.org/abs/2505.20685)
+- https://puffer.ai Protein and general direction is worth following (although it's in RL, it /feels/ similar)
+
+We'll take a look at a sane default during the seminar.
+
+
+* Tabular DL
+
+Now we'll discuss some /common/ building blocks important for tabular DL
+
+-----
+*Embeddings for numerical features*
+
+Introduced in https://arxiv.org/abs/2203.05556
+
+In the FT-Transformer days: FT - feature tokenizer
+
+
+
+-----
+*TabM*
+
+Efficient ensembling.
+
+First introduced in computer vision *to make ensembling efficient* 🤯
+
+https://openreview.net/forum?id=Sklf1yrYDr
+
+#+ATTR_HTML: :align center :width 800px
+[[file:assets/Tabular_DL/batchensemble.png]]
+
+
+https://arxiv.org/abs/2410.24210
+
+#+ATTR_HTML: :align center :width 900px
+[[file:assets/Tabular_DL/tabm.png]]
+
+
+-----
+*Retrieval*
+
+Once again, inspired by DL progress (RETRO for a good example)
+https://arxiv.org/abs/2112.04426
+
+#+ATTR_HTML: :align center :width 900px
+[[file:assets/Tabular_DL/retro.png]]
+
+TabDL instantiations:
+
+- TabR: https://arxiv.org/abs/2307.14338
+- ModernNCA: https://arxiv.org/abs/2407.03257
+
+
+-----
+*Reaching for explanations*
+
+1. Back to why? https://arxiv.org/abs/2207.08815
+
+   - Noisy features
+   - Axis-aligned datasets
+
+2. Uncertainty Lens https://arxiv.org/abs/2509.04430
+
+   - Label noise (a.k.a. Data Uncertainty).
+   - a CIFAR10 example
+   - why TabM helps?
+   
+3. Telescoping: https://arxiv.org/abs/2411.00247
+
+*  On AutoML
+
+That may be worth looking into, if end users are less competent
+
+- https://github.com/sb-ai-lab/LightAutoML
+- https://github.com/autogluon/autogluon
+- https://catboost.ai :))) 
+- https://github.com/priorLabs/tabpfn
+
+How do you define automl? what are the pros and cons
+
+* On foundation models for tabular data
+
+Short forray and note on all sorts of LLMs + Tables + scaling lines of work for improving predictive ML accuracy.
+
+- Automatic Feature Engineering (seems gimicky, but /may/ be improved in the future)
+- Finetuning Language Models to take on tabular data directly
+- Wrangling and constructing Trees (e.g. )
+- Using *very* small LMs as encoding of dirty text (see also https://skrub-data.org/)
+
+-----
+
+Performance Prediction for Large Systems via Text-to-Text Regression
+https://arxiv.org/abs/2506.21718
+
+#+ATTR_HTML: :align center :width 900px
+[[file:assets/On_foundation_models_for_tabular_data/text.png]]
+
+
+-----
+*ICL-based foundation models*
+
+TabPFN and follow-up work
+- TabPFNv2 (2.5)
+- LimiX
+- TabICL
+- TabDPT
+- OrionMSP
+- MotherNet
+- iLTM
+- ... (many more yet to come)
+
+But you can just read papers for this
+(if we have time during the seminar we'll talk about it).
+
+-----
+*What are ICL-based tabular foundation models* (short recap)
+
+A *Prior-Fitted Network* approximates Bayesian inference in a single forward pass.
+
+#+BEGIN_QUOTE
+Instead of fitting a model to your data, fit a model to *all possible datasets* from a prior.
+#+END_QUOTE
+
+*The Core Idea*
+
+Given a training set $\mathcal{D} = \{(x_i, y_i)\}_{i=1}^{n}$ and a query point $x_*$:
+
+*Training Procedure*
+
+1. *Define a prior* $p(\theta)$ over data-generating processes
+2. *Sample* synthetic datasets $\mathcal{D}^{(j)} \sim p(\mathcal{D}|\theta^{(j)})$
+3. *Train* transformer to minimize:
+
+\begin{equation}
+\mathcal{L} = \mathbb{E}_{\theta, \mathcal{D}, (x_*, y_*)} \left[ -\log q_\phi(y_* | x_*, \mathcal{D}) \right]
+\end{equation}
+
+where $q_\phi$ is the PFN with parameters $\phi$.
+
+https://www.nature.com/articles/s41586-024-08328-6
+
+-----
+*What is even generalized*?
+
+How scalable it is?
+
+Nobody knows.
+
+meta-learning + synthetic data feels like a nerd-snipe for years (for me personally).
+
+So this is an idea and some questions before we end the lecture.
+
+- Pretrained Transformers as Universal Computation Engines
+    https://arxiv.org/abs/2103.05247
+- Between Circuits and Chomsky: Pre-pretraining on Formal Languages Imparts Linguistic Biases
+    https://arxiv.org/abs/2502.19249
+- Universal pre-training by iterated random computation
+    https://arxiv.org/abs/2506.20057
+- Can You Learn to See Without Images? Procedural Warm-Up for Vision Transformers 
+   https://arxiv.org/abs/2511.13945
+
+-----
+Also mentioned towards the end of the seminar.
+
+/Hardware lottery/
+https://arxiv.org/abs/2009.06489
+
+The idea here is investment in software+hardware+research may drive the successs of methods. We may be seing something like this in deep learning approaches for tabular data right now (as we've tried to see during the seminar, software-wise iterating upon DL methods is much more aproachable, which may have downstream effects in research, that we've covered durign the lecture).
+
+  

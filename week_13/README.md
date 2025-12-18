@@ -4,6 +4,10 @@ Lecturer and seminarian: [Ivan Rubachev](https://www.hse.ru/org/persons/19091201
 
 Recording (in Russian): [lecture](), [seminar]().
 
+Lecture notes: [`lecture.org`](lecture.org)
+
+Seminar code: [`./seminar`](./seminar)
+
 ## Annotation
 
 **Lecture:**  
@@ -11,3 +15,4 @@ We'll talk about DL and tabular data. We'll go from [California](https://scikit-
 
 **Seminar:**  
 Hands-on tabular DL — on a MacBook. The idea: implement some of the core models from scratch (or watch me do it). The hardware constraint might help us appreciate the practical limits (or lack thereof).
+
