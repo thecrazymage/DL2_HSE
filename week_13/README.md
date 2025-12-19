@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [Ivan Rubachev](https://www.hse.ru/org/persons/190912012/)
 
-Recording (in Russian): [lecture](), [seminar]().
+Recording (in Russian): [lecture](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/lecture_13.mp4), [seminar](https://disk.yandex.ru/d/mzXlT0U3MzEZkQ/%D0%9F%D0%9C%D0%98/DL%202/seminar_13.mp4).
 
 Lecture notes: [`lecture.org`](lecture.org)
 
