@@ -45,7 +45,7 @@ the [wiki page](http://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD
 
 ## Acknowledgments
 
-I would like to express my gratitude to [Ivan Rubachev](https://puhsu.net/) and [Evgeny Sokolov](https://github.com/esokolov) for their invaluable help and support in designing this course. My thanks also go to all our guest lecturers for agreeing to participate and share their expertise. A special thanks to [Maxim Kodryan](https://github.com/MaxBourdon) — his mere existence was contribution enough.
+I would like to express my gratitude to [Ivan Rubachev](https://puhsu.net/) and [Evgeny Sokolov](https://github.com/esokolov) for their invaluable help and support in designing this course. I am also deeply grateful to [Denis Rakitin](https://github.com/RakitinDen) for his advices during the course. My thanks also go to all our guest lecturers and seminarians for agreeing to participate and share their expertise. A special thanks to [Maxim Kodryan](https://www.youtube.com/watch?v=pKejn72xpCo) — his mere existence was contribution enough.
 
 ## License
 
