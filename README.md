@@ -9,15 +9,21 @@ the [wiki page](https://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%B
 
 1. The course provides **4 homework assignments** and **2 practice tasks**.
 2. Evaluation formula (arithmetic rounding):
-    <!-- - Applied Mathematics and Information Science: 
-    $$S = \text{round}\left(0.25\cdot\text{Competition} + 0.75\cdot\frac{1}{5}\cdot\sum_{i=1}^{5}\text{HW}_i\right).$$
-    - Computing and Data Science: 
-    $$S = \text{round}\left(\frac{1}{5}\sum_{i=1}^{5}HW_i\right).$$ -->
+    - MOP and AI360:
+    $$S = \text{round}\left(0.4\cdot\text{Practice} + 0.4\cdot\text{HW} + 0.2\cdot\text{Final Test}\right)$$
+    - KNAD: 
+    $$S = \text{round}\left(0.7\cdot\text{HW} + 0.3\cdot\text{Final Test}\right)$$
+3. Course components:
+    - Homeworks: 4 homework assignments in total.
+    - Practice (for AI360 & MOP):
+        - Participation in a competition.
+        - Task transferred from another course.
+    - Final Test: questions covering one lecture block.
 
 ## Syllabus
 
 <big><pre>
-    1.  
+    1.  [DL 1 compressed](./week_01/)
 </pre></big>
 
 ## Homeworks
