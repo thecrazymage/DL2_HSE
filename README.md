@@ -1,7 +1,7 @@
 # Deep Learning 2 HSE
 
 <p align="center">
-  <img src="image.png" width="100%"/>
+  <img src="image.jpeg" width="100%"/>
 </p>
 
 This repo contains lectures slides, seminars notebooks and homeworks for the "Deep Learning 2" course at the [Faculty of Computer Science](https://cs.hse.ru/en/) of [HSE University](https://www.hse.ru/en/). 
