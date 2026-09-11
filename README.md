@@ -29,6 +29,7 @@ the [wiki page](https://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%B
 <big><pre>
     1.  [DL 1 compressed](./week_01/)
     2.  [Essentials of GPU, Deep Learning Bottlenecks, and Benchmarking Basics](./week_02/)
+    2.  [The Evolution of Transformers](./week_03/)
 </pre></big>
 
 ## Homeworks
