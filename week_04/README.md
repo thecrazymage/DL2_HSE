@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [George Yakushev](https://github.com/Mr-DarkTesla)
 
-Recordings (in Russian): [lecture](???), [seminar](???).
+Recordings (in Russian): [lecture](https://disk.yandex.ru/i/_Th46i-gSNfgGQ), [seminar](https://disk.yandex.ru/i/N1uUK5TVA1m1cA).
 
 ## Annotation
 
