@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [George Yakushev](https://github.com/Mr-DarkTesla)
 
-Lecture: [slides](./lecture_slides.pdf) 
+Lecture: [slides](./lecture.pdf) 
 
 Seminar ipynb: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thecrazymage/DL2_HSE/blob/main/week_04/seminar.ipynb)
 
