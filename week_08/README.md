@@ -1,4 +1,4 @@
-# Generative Models: VAEs and GANs
+# Generative Models: VAEs
 
 Lecturer and seminarian: [Denis Rakitin](https://www.hse.ru/org/persons/190910999/)
 
