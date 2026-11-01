@@ -7,3 +7,7 @@ Recordings (in Russian): [lecture](https://disk.yandex.ru/i/q7MHjQisAA9qLQ), [se
 ## Annotation
 
 This week, we'll trace the evolution of object detection and segmentation, from R-CNN to real-time methods such as YOLO-World and CLIP-based approaches. We'll look at how U-Net architectures have gone beyond computer vision to power neural operators, and at how diffusion models can be used for segmentation. In the hands-on part, we'll implement these architectures and train a semantic segmentation model. We'll also discuss regularization methods for convolutional layers, and learn how to apply pre-trained models.
+
+<p align="center">
+  <img src="../assets/image_week_06.png" width="100%"/>
+</p>

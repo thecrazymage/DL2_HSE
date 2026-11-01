@@ -6,3 +6,7 @@ Recordings (in Russian): [lecture](https://disk.yandex.ru/i/ot8M-XxSySTmGw), [se
 
 ## Annotation
 This lecture follows twelve years of Transformer architecture, from the original attention mechanism to Kimi Delta Attention, treating each step as an answer to one specific bottleneck. We close by seeing how all of it comes together in a 2026 frontier model. The accompanying seminar goes deeper into the main alternative - state space models.
+
+<p align="center">
+  <img src="../assets/image_week_03.png" width="100%"/>
+</p>

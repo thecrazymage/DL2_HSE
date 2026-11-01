@@ -6,3 +6,7 @@ Recordings (in Russian): [lecture](https://disk.yandex.ru/i/dRtRgWONMLiyPA), [se
 
 ## Annotation
 In this session, we will explore the reasons behind the dominance of GPUs in Deep Learning and examine the common sources of performance bottlenecks in DL code. You will learn how to identify these bottlenecks using profiling tools and apply techniques to optimize and accelerate your code.
+
+<p align="center">
+  <img src="../assets/image_week_02.png" width="100%"/>
+</p>
