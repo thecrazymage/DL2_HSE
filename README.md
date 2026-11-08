@@ -46,6 +46,12 @@ the [wiki page](https://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%B
     1.  [Homework 3](./homeworks/homework_03)
 </pre></big>
 
+## Teaching assistants
+
+Our teaching assistants support students throughout the course, help with assignments, and provide feedback on their work.
+
+- 
+
 ## Acknowledgments
 
 I would like to express my gratitude to all our guest lecturers and seminarians for agreeing to participate and share their expertise. A special thanks to [Maxim Kodryan](https://www.youtube.com/watch?v=lWfN9b_DybI) — his mere existence was contribution enough.
