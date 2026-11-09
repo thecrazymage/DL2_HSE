@@ -56,6 +56,7 @@ Our teaching assistants support students throughout the course, help with assign
 
 - [Anastasia Golubkova](https://github.com/Nastya-golubkova)
 - [Aflyatunov Amir](https://github.com/Amirchik590)
+- [Boris Zhukov](https://github.com/podmabsterio)
 
 ## Acknowledgments
 
