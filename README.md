@@ -42,8 +42,9 @@ the [wiki page](https://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%B
 
 <big><pre>
     1.  [Homework 1](./homeworks/homework_01)
-    1.  [Homework 2](./homeworks/homework_02)
-    1.  [Homework 3](./homeworks/homework_03)
+    2.  [Homework 2](./homeworks/homework_02)
+    3.  [Homework 3](./homeworks/homework_03)
+    4.  [Homework 4](./homeworks/homework_04)
 </pre></big>
 
 ## Teaching assistants
