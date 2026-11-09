@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [Alexander Oganov](https://www.hse.ru/org/persons/956617478/)
 
-Recordings (in Russian): [lecture](https://disk.yandex.ru/i/q7MHjQisAA9qLQ), [seminar](https://disk.yandex.ru/i/RWvoWFh5Bi8TJw).
+Recordings (in Russian): [lecture](https://youtu.be/Ka5szJUViJo), [seminar](https://youtu.be/MOSrll3aFyY).
 
 ## Annotation
 

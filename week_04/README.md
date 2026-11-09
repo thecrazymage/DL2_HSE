@@ -6,7 +6,7 @@ Lecture: [slides](./lecture.pdf)
 
 Seminar ipynb: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/thecrazymage/DL2_HSE/blob/main/week_04/seminar.ipynb)
 
-Recordings (in Russian): [lecture](https://disk.yandex.ru/i/_Th46i-gSNfgGQ), [seminar](https://disk.yandex.ru/i/N1uUK5TVA1m1cA).
+Recordings (in Russian): [lecture](https://youtu.be/puakGZ1Vd5s), [seminar](https://youtu.be/BuCaCYvhu4M).
 
 ## Annotation
 

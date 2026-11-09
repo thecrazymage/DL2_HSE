@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [Timofey Smirnov](https://www.linkedin.com/in/timothyxp/)
 
-Recordings (in Russian): [lecture and seminar](https://disk.yandex.ru/i/ZXpcR7oBsBIgNg).
+Recordings (in Russian): [lecture and seminar](https://youtu.be/NcEaaqGwpAc).
 
 ## Annotation
 

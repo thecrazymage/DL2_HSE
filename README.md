@@ -9,6 +9,8 @@ This repo contains lectures slides, seminars notebooks and homeworks for the "De
 Details about the course organization can be found at
 the [wiki page](https://wiki.cs.hse.ru/%D0%93%D0%BB%D1%83%D0%B1%D0%B8%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BE%D0%B1%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5_2_2026) (in Russian).
 
+[![YouTube lectures](https://img.shields.io/badge/YouTube-Lecture_Playlist-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/playlist?list=PLVMRtJ1q3tGQ)
+
 ## General information
 
 1. The course provides **4 homework assignments** and **2 practice tasks**.

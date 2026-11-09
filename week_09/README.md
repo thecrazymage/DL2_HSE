@@ -2,7 +2,7 @@
 
 Lecturer and seminarian: [Denis Rakitin](https://www.hse.ru/org/persons/190910999/)
 
-Recordings (in Russian): [lecture](???), [seminar](???).
+Recordings (in Russian): [lecture and seminar](https://youtu.be/C2XoFg7sePo).
 
 ## Annotation
 
